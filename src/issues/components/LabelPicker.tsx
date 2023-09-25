@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Loading } from '../../shared/components/Loading';
-import { useLabels } from '../hooks/useLabels';
+import { useLabels } from '../hooks';
 
 interface Props {
   selectedLabels: string[];

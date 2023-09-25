@@ -2,8 +2,6 @@ import { IssueItem } from './IssueItem';
 
 export const IssueList = () => {
 
-    
-
     return (
         <div className="card border-white">
             <div className="card-header bg-dark">
