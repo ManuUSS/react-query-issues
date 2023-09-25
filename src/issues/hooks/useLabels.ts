@@ -6,7 +6,6 @@ import { sleep } from '../../helpers/sleep';
 const getLabels = async ():Promise<ILabel[]> => {
     await sleep( 2 );
     const { data } = await githubApi<ILabel[]>('/labels');
-    console.log( data );
     return data;
 }
 
@@ -17,6 +16,8 @@ export const useLabels = () => {
         getLabels,
         {
             staleTime: 1000 * 60 * 60,
+            // placeholderData: [],
+            // initialData: [], 
             refetchOnWindowFocus: false
         }
     );
