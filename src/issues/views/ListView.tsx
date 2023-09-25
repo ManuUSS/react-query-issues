@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { IssueList } from '../components/IssueList';
 import { LabelPicker } from '../components/LabelPicker';
 import { useIssues } from '../hooks';
+import { Loading } from '../../shared/components/Loading';
 
 
 export const ListView = () => {
@@ -20,7 +21,11 @@ export const ListView = () => {
     <div className="row mt-5">
       
       <div className="col-8">
-        <IssueList />
+        {
+          issuesQuery.isLoading 
+           ? ( <Loading /> )
+           : ( <IssueList /> )
+        }
       </div>
       
       <div className="col-4">
