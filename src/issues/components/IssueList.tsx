@@ -26,7 +26,7 @@ export const IssueList: FC<Props> = ({ issues }) => {
             <div className="card-body text-dark">
                 {
                     issues.map( issue => (
-                        <IssueItem key={ issue.id } />
+                        <IssueItem key={ issue.id } issue={ issue } />
                     ))
                 }                
             </div>
