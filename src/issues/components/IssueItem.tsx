@@ -1,5 +1,5 @@
 import { FiInfo, FiMessageSquare, FiCheckCircle } from 'react-icons/fi';
-import { IIssue } from '../interfaces';
+import { IIssue, State } from '../interfaces';
 import { FC } from 'react';
 
 interface Props {
@@ -13,7 +13,7 @@ export const IssueItem:FC<Props> = ({ issue }) => {
         <div className="card mb-2 issue">
             <div className="card-body d-flex align-items-center">
                 { 
-                    state === 'open'
+                    state === State.Open
                     ? ( <FiInfo size={30} color="red" /> )
                     : ( <FiCheckCircle size={30} color="green" /> )
                 }

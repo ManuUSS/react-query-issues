@@ -1,2 +1,2 @@
-export type { IIssue } from './issue';
+export { type IIssue, State } from './issue';
 export type { ILabel } from './label';
