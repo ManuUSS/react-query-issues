@@ -1,6 +1,12 @@
+import { FC } from 'react';
+import { IIssue } from '../interfaces';
 import { IssueItem } from './IssueItem';
 
-export const IssueList = () => {
+interface Props {
+    issues: IIssue[];
+}
+
+export const IssueList: FC<Props> = ({ issues }) => {
 
     return (
         <div className="card border-white">
