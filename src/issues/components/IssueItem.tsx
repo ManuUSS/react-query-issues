@@ -1,7 +1,12 @@
 import { FiInfo, FiMessageSquare, FiCheckCircle } from 'react-icons/fi';
+import { IIssue } from '../interfaces';
+import { FC } from 'react';
 
+interface Props {
+    issue: IIssue
+}
 
-export const IssueItem = () => {
+export const IssueItem:FC<Props> = ({ issue }) => {
     return (
         <div className="card mb-2 issue">
             <div className="card-body d-flex align-items-center">
