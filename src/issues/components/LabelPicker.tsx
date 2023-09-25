@@ -1,11 +1,13 @@
+import { FC } from "react";
 import { Loading } from "../../shared/components/Loading";
 import { useLabels } from "../hooks/useLabels"
 
 interface Props {
-  
+  selectedLabels: string[];
+  onChange: ( labelName: string ) => void;
 }
 
-export const LabelPicker = () => {
+export const LabelPicker:FC<Props> = ({ selectedLabels, onChange }) => {
 
   const labelsQuery = useLabels();
 
