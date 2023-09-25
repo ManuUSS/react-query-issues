@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const IssueItem:FC<Props> = ({ issue }) => {
-    const { state, user, title, number } = issue;
+    const { state, user, title, number, comments } = issue;
     
     return (
         <div className="card mb-2 issue">
@@ -25,7 +25,7 @@ export const IssueItem:FC<Props> = ({ issue }) => {
 
                 <div className='d-flex align-items-center'>
                     <img src={ user.avatar_url } alt="User Avatar" className="avatar" />
-                    <span className='px-2'>2</span>
+                    <span className='px-2'>{ comments }</span>
                     <FiMessageSquare />
                 </div>
 
