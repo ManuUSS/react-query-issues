@@ -28,7 +28,7 @@ h3 {
 
 .label-picker {
     cursor: pointer;
-    transition: all .5s;
+    transition: all .2s;
 }
 
 .label-picker:hover {
