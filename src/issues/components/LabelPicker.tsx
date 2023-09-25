@@ -1,6 +1,10 @@
 import { Loading } from "../../shared/components/Loading";
 import { useLabels } from "../hooks/useLabels"
 
+interface Props {
+  
+}
+
 export const LabelPicker = () => {
 
   const labelsQuery = useLabels();
