@@ -10,7 +10,7 @@ export const IssueItem:FC<Props> = ({ issue }) => {
     const { state, user, title, number, comments } = issue;
     
     return (
-        <div className="card mb-2 issue">
+        <div className="card mb-2 issue overflow-auto">
             <div className="card-body d-flex align-items-center">
                 { 
                     state === State.Open
