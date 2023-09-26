@@ -9,7 +9,7 @@ export const IssueView = () => {
   const params = useParams();
   const { id = '0' } = params;
 
-  const { issueQuery,commentsQuery } = useIssue( +id );
+  const { issueQuery, commentsQuery } = useIssue( +id );
   const { isLoading, data } = issueQuery;
 
   if( isLoading ) return ( <Loading /> )
@@ -23,10 +23,11 @@ export const IssueView = () => {
       </div>
       
       <IssueComment issue={ data! }/>
-
-      {/* Comentario de otros */}
-      {/* <IssueComment body={ comment2 } />
-      <IssueComment body={ comment3 } /> */}
+      {
+        commentsQuery.data?.map(( issue ) => (
+          <IssueComment key={ issue.id } issue={ issue } />
+        ))
+      }
     </div>
   )
 }
