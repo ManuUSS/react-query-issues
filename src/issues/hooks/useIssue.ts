@@ -20,8 +20,16 @@ export const useIssue = ( issueNumber: number ) => {
     const issueQuery = useQuery(
         ['issue', issueNumber ],
         () => getIssueData( issueNumber ),
+    );
+
+    const commentsQuery = useQuery(
+        ['issue', issueNumber, 'comments' ],
+        () => getIssueComments( issueNumber ),
     )
 
-    return issueQuery
+    return {
+        issueQuery,
+        commentsQuery
+    }
 
 }
