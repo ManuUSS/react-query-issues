@@ -21,8 +21,12 @@ export const IssueView = () => {
       <div className="col-12 mb-3">
         <Link to='./issues/list'>Go Back</Link>
       </div>
-      
-      <IssueComment issue={ data! }/>
+      <div className='mb-3'>
+        <IssueComment issue={ data! }/>
+      </div>
+      { 
+        commentsQuery.isLoading && ( <Loading /> )
+      }
       {
         commentsQuery.data && 
         (
