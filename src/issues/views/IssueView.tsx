@@ -9,7 +9,7 @@ export const IssueView = () => {
   const params = useParams();
   const { id = '0' } = params;
 
-  const issueQuery = useIssue( +id );
+  const { issueQuery,commentsQuery } = useIssue( +id );
   const { isLoading, data } = issueQuery;
 
   if( isLoading ) return ( <Loading /> )
