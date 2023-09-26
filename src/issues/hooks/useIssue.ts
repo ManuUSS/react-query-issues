@@ -9,6 +9,12 @@ const getIssueData = async ( issueNumber: number ):Promise<IIssue> => {
     return data;
 }
 
+const getIssueComments = async ( issueNumber: number ):Promise<IIssue[]> => {
+    await sleep( 2 );
+    const { data } = await githubApi.get<IIssue[]>(`issues/${ issueNumber }/comments`);
+    return data;
+}
+
 export const useIssue = ( issueNumber: number ) => {
 
     const issueQuery = useQuery(
