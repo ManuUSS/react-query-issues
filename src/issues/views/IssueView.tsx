@@ -23,14 +23,19 @@ export const IssueView = () => {
       </div>
       
       <IssueComment issue={ data! }/>
-      <div className="d-flex flex-column gy-2 mt-3">
-        <p className="h5">Comments</p>
-        {
-          commentsQuery.data?.map(( issue ) => (
-            <IssueComment key={ issue.id } issue={ issue } />
-          ))
-        }
-      </div>
+      {
+        commentsQuery.data && 
+        (
+          <div className="d-flex flex-column gy-2 mt-3">
+            <p className="h5">Comments</p>
+            {
+              commentsQuery.data?.map(( issue ) => (
+                <IssueComment key={ issue.id } issue={ issue } />
+              ))
+            }
+          </div>
+        )
+      }
     </div>
   )
 }
