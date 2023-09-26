@@ -12,18 +12,17 @@ export const IssueView = () => {
   const issueQuery = useIssue( +id );
   const { isLoading, data } = issueQuery;
 
+  if( isLoading ) return ( <Loading /> )
+
+  if( !data ) return ( <Navigate to="./issues/list" /> )
+
   return (
     <div className="row mb-5">
       <div className="col-12 mb-3">
         <Link to='./issues/list'>Go Back</Link>
       </div>
-      { !data && !isLoading && (<Navigate  to="./issues/list" /> ) }
-      {
-        isLoading 
-          ? ( <Loading /> )
-          : ( <IssueComment issue={ data! }/> )
-      }
-
+      
+      <IssueComment issue={ data! }/>
 
       {/* Comentario de otros */}
       {/* <IssueComment body={ comment2 } />
