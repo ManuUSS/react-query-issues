@@ -8,6 +8,8 @@ interface Props {
 
 export const IssueList: FC<Props> = ({ issues }) => {
 
+    
+
     return (
         <div className="card border-white">
             <div className="card-header bg-dark">
