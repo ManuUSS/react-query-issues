@@ -16,17 +16,26 @@ export const IssueList: FC<Props> = ({ issues, state, onStateChange }) => {
             <div className="card-header bg-dark">
                 <ul className="nav nav-pills card-header-pills">
                     <li className="nav-item">
-                        <a className={`nav-link ${ !state ? 'active' : ''}`}>
+                        <a 
+                            className={`nav-link ${ !state ? 'active' : ''}`}
+                            onClick={ () => onStateChange() }
+                        >
                             All
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a className={`nav-link ${ state === State.Open ? 'active' : ''}`}>
+                        <a 
+                            className={`nav-link ${ state === State.Open ? 'active' : ''}`}
+                            onClick={ () => onStateChange( State.Open ) }
+                        >
                             Open
                         </a>
                     </li>
                     <li className="nav-item">
-                        <a className={`nav-link ${ state === State.Closed ? 'active' : ''}`}>
+                        <a 
+                            className={`nav-link ${ state === State.Closed ? 'active' : ''}`}
+                            onClick={ () => onStateChange( State.Closed ) }
+                        >
                             Closed
                         </a>
                     </li>
