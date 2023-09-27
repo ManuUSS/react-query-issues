@@ -1,18 +1,21 @@
-import { FiInfo, FiMessageSquare, FiCheckCircle } from 'react-icons/fi';
-import { IIssue, State } from '../interfaces';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useQueryClient } from '@tanstack/react-query';
+import { FiInfo, FiMessageSquare, FiCheckCircle } from 'react-icons/fi';
+import { IIssue, State } from '../interfaces';
 
 interface Props {
     issue: IIssue
 }
 
 export const IssueItem:FC<Props> = ({ issue }) => {
+    
     const { state, user, title, number, comments } = issue;
     const navigate = useNavigate();
-    
+    const queryClient = useQueryClient();
+
     const onMouse = () => {
-        console.log('first');
+
     }
 
     return (
