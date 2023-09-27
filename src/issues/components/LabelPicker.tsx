@@ -13,7 +13,7 @@ export const LabelPicker:FC<Props> = ({ selectedLabels, onChange }) => {
 
   if( labelsQuery.isLoading )
     return ( <Loading /> )
-  console.log( labelsQuery.data );
+  
   return (
     <div>
       {
