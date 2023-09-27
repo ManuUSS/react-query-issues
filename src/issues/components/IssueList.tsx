@@ -16,13 +16,19 @@ export const IssueList: FC<Props> = ({ issues, state, onStateChange }) => {
             <div className="card-header bg-dark">
                 <ul className="nav nav-pills card-header-pills">
                     <li className="nav-item">
-                        <a className="nav-link active">All</a>
+                        <a className={`nav-link ${ !state ? 'active' : ''}`}>
+                            All
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link">Open</a>
+                        <a className={`nav-link ${ state === State.Open ? 'active' : ''}`}>
+                            Open
+                        </a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link">Closed</a>
+                        <a className={`nav-link ${ state === State.Closed ? 'active' : ''}`}>
+                            Closed
+                        </a>
                     </li>
                 </ul>
             </div>
