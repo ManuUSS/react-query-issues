@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 import { FiInfo, FiMessageSquare, FiCheckCircle } from 'react-icons/fi';
 import { IIssue, State } from '../interfaces';
-import { getIssueData } from '../hooks/useIssue';
+import { getIssueComments, getIssueData } from '../hooks/useIssue';
 
 interface Props {
     issue: IIssue
@@ -19,6 +19,11 @@ export const IssueItem:FC<Props> = ({ issue }) => {
         queryClient.prefetchQuery(
             ['issue', issue.number],
             () => getIssueData( issue.number )
+        )
+
+        queryClient.prefetchQuery(
+            ['issue', issue.number, 'comments'],
+            () => getIssueComments( issue.number )
         )
     }
 
