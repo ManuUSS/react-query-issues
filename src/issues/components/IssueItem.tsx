@@ -27,11 +27,20 @@ export const IssueItem:FC<Props> = ({ issue }) => {
         )
     }
 
+    const presetData = () => {
+        queryClient.setQueryData(
+            ['issue', issue.number],
+            issue
+        )
+    }
+
+
     return (
         <div 
             className="card mb-2 issue overflow-auto"
             onClick={ () => navigate(`/issues/issue/${ number }`)}
-            onMouseEnter={ onPrefetchData }
+            // onMouseEnter={ onPrefetchData }
+            onMouseEnter={ presetData }
         >
             <div className="card-body d-flex align-items-center">
                 { 
