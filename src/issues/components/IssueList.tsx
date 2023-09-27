@@ -1,14 +1,15 @@
 import { FC } from 'react';
-import { IIssue } from '../interfaces';
+import { IIssue, State } from '../interfaces';
 import { IssueItem } from './IssueItem';
 
 interface Props {
     issues: IIssue[];
+    state?: State;
+    onStateChange: ( newState?: State ) => void;
 }
 
-export const IssueList: FC<Props> = ({ issues }) => {
+export const IssueList: FC<Props> = ({ issues, state, onStateChange }) => {
 
-    
 
     return (
         <div className="card border-white">
