@@ -11,10 +11,15 @@ export const IssueItem:FC<Props> = ({ issue }) => {
     const { state, user, title, number, comments } = issue;
     const navigate = useNavigate();
     
+    const onMouse = () => {
+        console.log('first');
+    }
+
     return (
         <div 
             className="card mb-2 issue overflow-auto"
             onClick={ () => navigate(`/issues/issue/${ number }`)}
+            onMouseEnter={ onMouse }
         >
             <div className="card-body d-flex align-items-center">
                 { 
