@@ -16,6 +16,9 @@ export const useLabels = () => {
         getLabels,
         {
             staleTime: 1000 * 60 * 60,
+            
+            // placeholderData: [],
+            // initialData: [], 
             refetchOnWindowFocus: false
         }
     );
