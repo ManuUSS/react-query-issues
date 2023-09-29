@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { GitApp } from '../GitApp';
 
 import { ListView, IssueView } from '../issues/views';
+import { ProofForm } from '../issues/views/ProofForm';
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ export const router = createBrowserRouter([
         { path: 'issue/:id', element: <IssueView /> },
         { path: '*', element: <Navigate to="list" /> },
     ]
+  },
+  {
+    path: '/proof',
+    element: <ProofForm />
   },
   {
     path: '/',

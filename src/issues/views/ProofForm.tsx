@@ -17,27 +17,29 @@ export const ProofForm = () => {
       }
 
     return (
-        <div className="row mt-5">
-          <form noValidate onSubmit={ onSubmitForm }>
-            <AB 
-              label='Selet a drone:' 
-              value={ object.value }
-              name='drone'
-              onChange={ onChange }
-            >
-              <A value='DJI'/>
-              <A value='DJS'/>
-              <A value='DJO'/>
-              <A value='DJP'/>
-              <A value='DJQ'/>
-              <A value='DJR'/>
-              <A value='DJM'/>
-              <A value='DJT'/>
-            </AB>
-            <div className='d-block mt-3'>
-              <input className='btn btn-primary' type="submit" value="Enviar" />
+        <div className="container mt-3">
+            <div className="row mt-5">
+            <form noValidate onSubmit={ onSubmitForm }>
+                <AB 
+                    label='Select a drone:' 
+                    value={ object.value }
+                    name='drone'
+                    onChange={ onChange }
+                >
+                <A value='DJI'/>
+                <A value='DJS'/>
+                <A value='DJO'/>
+                <A value='DJP'/>
+                <A value='DJQ'/>
+                <A value='DJR'/>
+                <A value='DJM'/>
+                <A value='DJT'/>
+                </AB>
+                <div className='d-block mt-3'>
+                <input className='btn btn-primary' type="submit" value="Enviar" />
+                </div>
+            </form>
             </div>
-          </form>
         </div>
       )
 }
