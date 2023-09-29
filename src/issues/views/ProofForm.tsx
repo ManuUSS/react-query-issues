@@ -9,12 +9,12 @@ export const ProofForm = () => {
     const onChange = ( e:ChangeEvent<HTMLInputElement> ) => {
         const { target } = e;
         setObject({ value:target.value });
-      }
+    }
     
-      const onSubmitForm = ( e: FormEvent<HTMLFormElement> ) => {
-          e.preventDefault();
-          console.log( object );
-      }
+    const onSubmitForm = ( e: FormEvent<HTMLFormElement> ) => {
+        e.preventDefault();
+        console.log( object );
+    }
 
     return (
         <div className="container mt-3">
