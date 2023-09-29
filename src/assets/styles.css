@@ -52,3 +52,25 @@ h3 {
         transform: rotate(365deg);
     }
 }
+
+.ft-radio-group {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    position: relative;
+}
+
+.ft-radio-group__item {
+    padding: 1rem;
+    background-color: aquamarine;
+    border-radius: 1rem;
+}
+.ft-radio-group__item--active {
+    background-color: rgb(68, 167, 134);
+    color: white;
+}
+
+.ft-radio-group__input {
+    visibility: hidden;
+    position: absolute;
+}
