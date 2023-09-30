@@ -15,7 +15,7 @@ const getIssues = async ():Promise<IIssue[]> => {
 }
 
 
-export const useIssues = () => {
+export const useIssues = ({ state, labels }:Props) => {
 
     const issuesQuery = useQuery(
         ['issues'],
