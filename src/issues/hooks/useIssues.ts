@@ -44,10 +44,16 @@ export const useIssues = ({ state, labels }:Props) => {
         setPage( page + 1 );
     }
 
+    const prevPage = () => {
+        if( page <= 1 ) return;
+        setPage( page - 1 );
+    }
+
     return {
         issuesQuery,
         page,
-        nextPage
+        nextPage,
+        prevPage
     }
 
 }
