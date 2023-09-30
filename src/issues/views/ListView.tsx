@@ -33,6 +33,11 @@ export const ListView = () => {
               /> 
             )
         }
+        <div>
+          <button className='btn btn-outline-primary'>Prev</button>
+          <span>123</span>
+          <button className='btn btn-outline-primary'>Next</button>
+        </div>
       </div>
       
       <div className="col-4">
