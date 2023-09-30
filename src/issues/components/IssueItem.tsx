@@ -55,6 +55,19 @@ export const IssueItem:FC<Props> = ({ issue }) => {
                 <div className="d-flex flex-column flex-fill px-2">
                     <span>{ title }</span>
                     <span className="issue-subinfo">#{ number } opened 2 days ago by <span className='fw-bold'>{ user.login }</span></span>
+                    <div>
+                        {
+                            issue.labels.map(( { id, color, name } ) => (
+                                <span 
+                                    key={ id }
+                                    className='badge rounded-pill m-1'
+                                    style={{ backgroundColor: `${ color }`, color: 'black' }}
+                                >
+                                    { name }
+                                </span>
+                            ))
+                        }
+                    </div>
                 </div>
 
                 <div className='d-flex align-items-center'>
