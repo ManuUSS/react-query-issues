@@ -51,7 +51,7 @@ export const useIssues = ({ state, labels }:Props) => {
 
     return {
         issuesQuery,
-        page,
+        page: issuesQuery.isFetching ? 'Loading': page,
         nextPage,
         prevPage
     }
