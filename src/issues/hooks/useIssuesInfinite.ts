@@ -14,7 +14,7 @@ export const useIssuesInfinite = ({ state, labels }: Props ) => {
 
     const issuesQuery = useInfiniteQuery(
         ['issues', { state, labels, page: 1 }],
-        ( data ) => getIssuesInfinite( data ),
+        getIssuesInfinite,
         {
             //TODO: getNextPageParam
         }
