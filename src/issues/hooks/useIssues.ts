@@ -13,7 +13,12 @@ const getIssues = async( labels: string[], state?:State ):Promise<IIssue[]> => {
 
     const params = new URLSearchParams();
 
-    if(  state ) params.append( 'state', state );
+    if( state ) params.append( 'state', state );
+
+    if( labels.length > 0 ) {
+        const labelString = labels.join(',');
+        params.append( 'labels', labelString );
+    }
 
     const { data } = await githubApi.get<IIssue[]>('/issues', { params })
     return data;
