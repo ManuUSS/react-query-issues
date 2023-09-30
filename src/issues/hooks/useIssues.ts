@@ -8,7 +8,7 @@ interface Props {
     labels: string[];
 }
 
-const getIssues = async ():Promise<IIssue[]> => {
+const getIssues = async( labels: string[], state?:State ):Promise<IIssue[]> => {
     await sleep( 2 );
     const { data } = await githubApi.get<IIssue[]>('/issues')
     return data;
@@ -19,7 +19,7 @@ export const useIssues = ({ state, labels }:Props) => {
 
     const issuesQuery = useQuery(
         ['issues', { state, labels }],
-        getIssues
+        () => getIssues( labels, state )
     )
 
     return {
