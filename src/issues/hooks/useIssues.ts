@@ -37,11 +37,17 @@ export const useIssues = ({ state, labels }:Props) => {
     const issuesQuery = useQuery(
         ['issues', { state, labels, page }],
         () => getIssues({ labels, state, page })
-    )
+    );
+
+    const nextPage = () => {
+        if( issuesQuery.data?.length === 0 ) return;
+        setPage( page + 1 );
+    }
 
     return {
         issuesQuery,
-        page
+        page,
+        nextPage
     }
 
 }
