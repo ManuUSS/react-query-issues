@@ -34,7 +34,7 @@ export const ListViewInfinite = () => {
             )
         }
         <div className='mt-2'>
-          <button className='btn btn-outlined-success'>Load more...</button>
+          <button className='btn btn-outline-success'>Load more...</button>
         </div>
       </div>
       
