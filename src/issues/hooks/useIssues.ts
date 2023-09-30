@@ -18,7 +18,7 @@ const getIssues = async ():Promise<IIssue[]> => {
 export const useIssues = ({ state, labels }:Props) => {
 
     const issuesQuery = useQuery(
-        ['issues'],
+        ['issues', { state, labels }],
         getIssues
     )
 
