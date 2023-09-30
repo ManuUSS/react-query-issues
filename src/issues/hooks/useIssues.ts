@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { githubApi } from '../../api/githubApi';
 import { IIssue, State } from '../interfaces';
-import { sleep } from '../../helpers/sleep';
+import { getIssues } from '../helpers/getIssues';
 
 interface Props {
     state?: State;
