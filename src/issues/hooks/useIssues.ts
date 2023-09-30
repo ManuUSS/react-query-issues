@@ -10,7 +10,7 @@ interface Props {
     page?: number;
 }
 
-const getIssues = async( { labels, state, page }:Props ):Promise<IIssue[]> => {
+const getIssues = async( { labels, state, page = 1 }:Props ):Promise<IIssue[]> => {
     await sleep( 2 );
 
     const params = new URLSearchParams();
@@ -22,7 +22,7 @@ const getIssues = async( { labels, state, page }:Props ):Promise<IIssue[]> => {
         params.append( 'labels', labelString );
     }
 
-    params.append( 'page', '1' );
+    params.append( 'page', page.toString() );
     params.append( 'per_page', '5' );
 
     const { data } = await githubApi.get<IIssue[]>('/issues', { params })
