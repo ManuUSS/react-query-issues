@@ -27,7 +27,16 @@ export const getIssues = async( { labels, state, page = 1 }:Props ):Promise<IIss
     return data;
 }
 
-export const getIssuesInfinite = async( { labels, state, page = 1 }:Props ):Promise<IIssue[]> => {
+interface QueryProps {
+    queryKey: ( string | Props )[];
+    pageParam?: number;
+}
+
+export const getIssuesInfinite = async( { pageParam = 1, queryKey }:QueryProps ):Promise<IIssue[]> => {
+    
+    const [,, args] = queryKey;
+    const { state, labels } = args as Props;
+
     await sleep( 2 );
 
     const params = new URLSearchParams();
@@ -39,7 +48,7 @@ export const getIssuesInfinite = async( { labels, state, page = 1 }:Props ):Prom
         params.append( 'labels', labelString );
     }
 
-    params.append( 'page', page.toString() );
+    params.append( 'page', pageParam.toString() );
     params.append( 'per_page', '5' );
 
     const { data } = await githubApi.get<IIssue[]>('/issues', { params })
