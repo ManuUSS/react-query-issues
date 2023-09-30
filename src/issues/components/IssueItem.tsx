@@ -61,7 +61,7 @@ export const IssueItem:FC<Props> = ({ issue }) => {
                                 <span 
                                     key={ id }
                                     className='badge rounded-pill m-1'
-                                    style={{ backgroundColor: `${ color }`, color: 'black' }}
+                                    style={{ backgroundColor: `#${ color }`, color: 'black' }}
                                 >
                                     { name }
                                 </span>
