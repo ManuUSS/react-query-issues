@@ -11,7 +11,7 @@ interface Props {
 
 export const IssueItem:FC<Props> = ({ issue }) => {
     
-    const { state, user, title, number, comments } = issue;
+    const { state, user, title, number, comments, labels } = issue;
     const navigate = useNavigate();
     const queryClient = useQueryClient();
 
@@ -57,7 +57,7 @@ export const IssueItem:FC<Props> = ({ issue }) => {
                     <span className="issue-subinfo">#{ number } opened 2 days ago by <span className='fw-bold'>{ user.login }</span></span>
                     <div>
                         {
-                            issue.labels.map(( { id, color, name } ) => (
+                            labels.map(( { id, color, name } ) => (
                                 <span 
                                     key={ id }
                                     className='badge rounded-pill m-1'
