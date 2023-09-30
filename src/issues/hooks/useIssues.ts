@@ -20,6 +20,9 @@ const getIssues = async( labels: string[], state?:State ):Promise<IIssue[]> => {
         params.append( 'labels', labelString );
     }
 
+    params.append( 'page', '1' );
+    params.append( 'per_page', '5' );
+
     const { data } = await githubApi.get<IIssue[]>('/issues', { params })
     return data;
 }
