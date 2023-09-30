@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { githubApi } from '../../api/githubApi';
 import { IIssue, State } from '../interfaces';
@@ -33,6 +33,11 @@ const getIssues = async( { labels, state, page = 1 }:Props ):Promise<IIssue[]> =
 export const useIssues = ({ state, labels }:Props) => {
 
     const [ page, setPage] = useState<number>( 1 );
+
+    useEffect(() => {
+        setPage( 1 );
+    }, [ state, labels ]);
+    
 
     const issuesQuery = useQuery(
         ['issues', { state, labels, page }],
