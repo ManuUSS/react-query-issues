@@ -33,7 +33,7 @@ export const ListView = () => {
               /> 
             )
         }
-        <div>
+        <div className='d-flex mt-2 justify-content-between align-items-center'>
           <button className='btn btn-outline-primary'>Prev</button>
           <span>123</span>
           <button className='btn btn-outline-primary'>Next</button>
