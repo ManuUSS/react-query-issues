@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { githubApi } from '../../api/githubApi';
 import { ILabel } from '../interfaces/label';
-import { sleep } from '../../helpers/sleep';
+import { sleep } from '../../helpers';
 
 const getLabels = async ():Promise<ILabel[]> => {
     await sleep( 2 );

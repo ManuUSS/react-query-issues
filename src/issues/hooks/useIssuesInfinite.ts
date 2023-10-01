@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { State } from '../interfaces';
-import { getIssuesInfinite } from '../helpers/getIssues';
+import { getIssuesInfinite } from '../helpers';
 
 interface Props {
     state?: State;

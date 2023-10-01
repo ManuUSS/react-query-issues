@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import { IIssue, State } from '../interfaces';
-import { getIssues } from '../helpers/getIssues';
+import { State } from '../interfaces';
+import { getIssues } from '../helpers';
 
 interface Props {
     state?: State;
