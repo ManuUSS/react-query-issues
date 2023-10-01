@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { GitApp } from '../GitApp';
+import { IssueView, ListViewInfinite } from '../issues/views';
 
-import { ListView, IssueView, ListViewInfinite } from '../issues/views';
 
 export const router = createBrowserRouter([
   {
