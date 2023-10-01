@@ -10,8 +10,6 @@ interface Props {
 
 export const useIssuesInfinite = ({ state, labels }: Props ) => {
 
-
-
     const issuesQuery = useInfiniteQuery(
         ['issues', { state, labels }],
         getIssuesInfinite,
