@@ -34,7 +34,10 @@ export const ListViewInfinite = () => {
             )
         }
         <div className='mt-2'>
-          <button className='btn btn-outline-success'>Load more...</button>
+          <button 
+            disabled={ !issuesQuery.hasNextPage }
+            onClick={ () => issuesQuery.fetchNextPage() } 
+            className='btn btn-outline-success'>Load more...</button>
         </div>
       </div>
       
