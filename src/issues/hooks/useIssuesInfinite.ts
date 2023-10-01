@@ -11,8 +11,8 @@ interface Props {
 export const useIssuesInfinite = ({ state, labels }: Props ) => {
 
     const issuesQuery = useInfiniteQuery(
-        ['issues', { state, labels }],
-        getIssuesInfinite,
+        ['issues', 'infinite',  { state, labels }],
+        ( data ) => getIssuesInfinite( data ),
         {
             getNextPageParam: ( lastPage, pages ) => {
                 if( lastPage.length === 0 ) return;
