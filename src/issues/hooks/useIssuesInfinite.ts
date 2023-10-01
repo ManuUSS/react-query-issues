@@ -17,7 +17,7 @@ export const useIssuesInfinite = ({ state, labels }: Props ) => {
         getIssuesInfinite,
         {
             getNextPageParam: ( lastPage, params ) => {
-
+                if( lastPage.length === 0 ) return;
             }
         }
     )
