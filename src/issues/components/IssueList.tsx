@@ -10,7 +10,6 @@ interface Props {
 
 export const IssueList: FC<Props> = ({ issues, state, onStateChange }) => {
 
-
     return (
         <div className="card border-white">
             <div className="card-header bg-dark">
