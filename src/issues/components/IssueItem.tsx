@@ -10,6 +10,7 @@ interface Props {
     issue: IIssue
 }
 
+
 export const IssueItem:FC<Props> = ({ issue }) => {
     
     const { state, user, title, number, comments, labels, created_at } = issue;
