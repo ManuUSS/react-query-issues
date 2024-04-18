@@ -6,6 +6,7 @@ interface Props {
   issue: IIssue;
 }
 
+
 export const IssueComment: FC<Props> = ({ issue }) => {
   return (
     <div className="col-12">
